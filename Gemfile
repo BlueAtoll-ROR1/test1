@@ -52,3 +52,6 @@ gem 'capistrano', group: :development
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+
+sapna "last commit"
