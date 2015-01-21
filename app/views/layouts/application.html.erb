@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inspire</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- styles needed by jScrollPane -->
+  <link type="text/css" href="assets/stylesheets/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+
+  <!-- the mousewheel plugin - optional to provide mousewheel support -->
+  <script type="text/javascript" src="assets/javascripts/jquery.mousewheel.js"></script>
+
+  <!-- the jScrollPane script -->
+  <script type="text/javascript" src="assets/javascripts/jquery.jscrollpane.js"></script>
+  <%= render 'layouts/jScrollpane' %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<%= render 'layouts/header' unless @disable_nav %>
+
+<% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= name == :notice ? "success" : "danger" %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </div>
+    <% end %>
+  <% end %>
+
+<%= yield %>
+
+<%= javascript_tag do %>
+     $(function() {
+       $("time.timeago").timeago();
+     });
+   <% end %>
+
+</body>
+</html>

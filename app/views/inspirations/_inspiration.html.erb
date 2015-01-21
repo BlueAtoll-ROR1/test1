@@ -1,0 +1,13 @@
+<div class="box box-default" style="cursor: pointer;" data-toggle="modal" data-target="#inspirationModal<%= inspiration.id %>">
+  <div class="panel-body">
+  
+    <%= inspiration.quote %>
+    <br>
+ 
+    <%= link_to book_inspiration_path(inspiration.book_id, inspiration) do %>
+	    <span class="glyphicon glyphicon-comment"></span> <%= inspiration.comments.size %>
+    <% end %>
+  </div>
+</div>
+ 
+<%= render partial: 'inspirations/modal', locals: { inspiration: inspiration } %>

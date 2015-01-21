@@ -1,0 +1,9 @@
+<% unless @books.empty? %>
+<%= render "books/localSearch" %>
+  <br>
+  <br>
+<%= render "books/amazonSearch" %>
+
+<% else %>
+<%= render "books/amazonSearchOnly" %>
+<% end %>

@@ -1,0 +1,32 @@
+<div class="signup">
+	<h2>Sign in</h2>
+
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => { :class => "user-form" }) do |f| %>
+	<p class="float">
+	  	<%= f.label :email do %>
+	  	<span class="glyphicon glyphicon-envelope"></span> email
+	  	<% end %>
+	    <%= f.email_field :email, autofocus: true, placeholder:"Enter your email" %>
+  	</p>
+
+	<p class="float">
+	  	<%= f.label :password do %>
+	  	<span class="glyphicon glyphicon-lock"></span> password
+	  	<% end %>
+	    <%= f.password_field :password, autocomplete: "off", placeholder:"Enter your password" %>
+    </p>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div class="remember-me">
+	    	<%= f.check_box :remember_me, id: "remember-me" %> <%= f.label :remember_me %>
+	    </div>
+	  <% end -%>
+
+	  <div class="user-submit-wrap">
+	  	<%= f.submit "Sign in", class: "user-submit" %><br><br>
+	  	<%= render "devise/shared/links" %>
+	  </div>
+	<% end %>
+
+	
+</div>

@@ -1,0 +1,111 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.comment {
+	padding: 10px;
+	border-bottom: 1px dotted #9E9E9E;
+	margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Comment form */
+
+.comment-form {
+    background: #F6F3F3;
+    padding: 0px 10px 17px;
+}
+
+.comment-form:before, 
+.comment-form:after { 
+    content: " "; display: table; 
+}
+ 
+.comment-form:after { 
+    clear: both; 
+}
+ 
+.cbp-mc-column {
+    width: 33%;
+    padding: 10px 30px;
+    float: left;
+}
+ 
+.comment-form input,
+.comment-form textarea,
+.comment-form select {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #101010;
+    display: block;
+    width: 100%;
+    background: transparent;
+}
+ 
+.comment-form input,
+.comment-form textarea {
+    border: 3px solid #101010;
+    margin-top: 20px;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus,
+.comment-form label:active + input,
+.comment-form label:active + textarea {
+    outline: none;
+    border: 3px solid #a35cdb;
+}
+ 
+.comment-form textarea {
+    min-height: 100px;
+}
+ 
+.comment-form select:focus {
+    outline: none;
+}
+ 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #464646;
+    font-style: italic;
+}
+ 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #464646;
+    font-style: italic;
+}
+ 
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #464646;
+    font-style: italic;
+}
+ 
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #464646;
+    font-style: italic;
+}
+
+.comment-img img {
+    height: 60px;
+    width:60px;
+}
+
+.comment-title p {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 10px;
+}
+
+.comment-footer, comment-footer a {
+    font-size: 12px;
+    margin-top: 1em;
+    color: #a7a7a7;
+}
+
+.comment-footer .col-sm-4,
+.comment-footer .col-md-4,
+.comment-footer .col-lg-4 {
+    padding: 0px;
+}

@@ -1,0 +1,30 @@
+<%= render 'pages/home' %>
+
+<div class="featurette">
+  <%= link_to 'New Book', new_book_path %>
+
+    <div id="books" class="transitions-enabled">
+      <% @books.each do |book| %>
+        <div class="books-box panel panel-default">
+          <a href="<%= book_path(book) %>">
+          <%#= image_tag book.aws_image_url %></a>
+          <div class="panel-body">
+            <%= book.preview %>
+            <br>
+            <% if current_user.try(:admin?) %>
+            <div style="margin: 10px" class="center">
+              <%= link_to edit_book_path(book) do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+              <span style="padding-right:8px">Edit</span>
+              <% end %>
+              <%= link_to book, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
