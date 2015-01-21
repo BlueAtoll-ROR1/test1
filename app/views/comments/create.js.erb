@@ -1,3 +1,0 @@
-$('#comment_submit<%= @inspiration.id.to_s %>').val('');
-$('#comment_submit<%= @inspiration.id.to_s %>').attr('placeholder', 'Add a comment & hit enter.');
-$('#inspiration-comments').html('<%= escape_javascript(render @inspiration.comments.reverse) %>');
